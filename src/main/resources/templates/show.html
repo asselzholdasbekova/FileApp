@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>File</title>
+    </head>
+    <body>
+        File Info
+        <hr/>
+
+        <p th:text="'File ID: ' + ${file.getId()}"></p>
+        <p th:text="'File name: ' + ${file.getName()}"></p>
+        <p th:text="'File date: ' + ${file.getDate()}"></p>
+        <p th:text="'File path: ' + ${file.getPath()}"></p>
+
+        <form th:method="DELETE" th:action="@{/files/{id}(id=${file.getId()})}">
+            <input type="submit" value="Delete"/>
+        </form>
+
+        <hr/>
+        <a href="/files/">All Files</a>
+    </body>
+</html>
